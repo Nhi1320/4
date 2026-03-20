@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
-
+// Hàm kiểm tra năm nhuận
 bool NamNhuan(int Nam)
 {
     if (Nam % 400 == 0 || Nam % 4 == 0 && Nam % 100 != 0) return true;
     return false;
 }
-
+// Hàm cho biết số ngày trong tháng
 int NgayTrongThang(int Thang, int Nam)
 {
     switch(Thang)
@@ -26,7 +26,7 @@ int NgayTrongThang(int Thang, int Nam)
     default: return 0;
     }
 }
-
+// Kiểm tra tháng
 bool KiemTraHopLe(int Ngay, int Thang, int Nam)
 {
     if (Thang <1 || Thang >12) return false;
@@ -34,7 +34,7 @@ bool KiemTraHopLe(int Ngay, int Thang, int Nam)
     return 0;
 }
 
-
+// Tính và in ra ngày kế tiếp
 void NgayKeTiep(int Ngay,int Thang,int Nam)
 {
     if(KiemTraHopLe(Ngay,Thang,Nam)==0) return;
@@ -52,6 +52,7 @@ void NgayKeTiep(int Ngay,int Thang,int Nam)
         cout << "1" << "/" << Thang << "/" << Nam << endl;
      }
  }
+ // Kiểm tra tính hợp lệ của ngày
  else if(Ngay<NgayTrongThang(Thang,Nam))
  {
      Ngay++;
@@ -62,7 +63,7 @@ void NgayKeTiep(int Ngay,int Thang,int Nam)
      cout<< "Ngay khong hop le. "<<endl;
  }
 }
-
+// Nhập ngày, tháng, năm
 int main()
 {
     int Ngay, Thang, Nam;
